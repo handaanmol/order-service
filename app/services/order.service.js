@@ -7,7 +7,7 @@ var Promise = require('bluebird');
 var _ = require('underscore');
 var fs = require('fs');
 // var itemFile = require('../../../item.json')
-var orderFile = require('../../../orders.json')
+var orderFile = require('../../orders.json')
 
 //Creating the object which will finally be exported
 var orderService = {
@@ -21,14 +21,6 @@ var orderService = {
  */
 function placeOrder(order) {
     return new Promise(function (resolve, reject) {
-        // itemFile.itemData[order.itemId - 1].quantity -= order.orderQuantity;
-        // console.log("updated itemFile is--------", itemFile.itemData);
-        // fs.writeFile(__dirname + "/../../../item.json", JSON.stringify(itemFile), function (err) {
-        // if (err) {
-        //     logger.error("Some error while adding new item in the item file");
-        //     reject(err);
-        // } else {
-        //     logger.info("file has been updated successfully");
         var orderNo = new Date().getTime();
         var obj = {
             orderId: orderNo,
@@ -36,7 +28,7 @@ function placeOrder(order) {
             orderQty: order.orderQuantity
         }
         orderFile.orders.push(obj);
-        fs.writeFile(__dirname + "/../../../orders.json", JSON.stringify(orderFile), function (err) {
+        fs.writeFile(__dirname + "/../../orders.json", JSON.stringify(orderFile), function (err) {
             if (err) {
                 logger.error("Some error while adding new order in the order file");
                 reject(err);
@@ -45,7 +37,6 @@ function placeOrder(order) {
                 resolve(obj);
             }
         });
-        // })
     })
 };
 
