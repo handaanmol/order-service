@@ -3,8 +3,6 @@
 
  - [Express.js](http://expressjs.com/) (Web Application Framework)
 
- - [MongoDB](https://www.mongodb.org/)(document database)
-
 #### Prerequisites to run this app
 
 The App requires the following major dependencies:
@@ -42,35 +40,35 @@ https://nodejs.org
 1) Check out the code from :
 
 ```sh
-//needs to be changed
+https://github.com/handaanmol/order-service
 ```
 
 2) Copy the clone URL ( `clone with SSH` ) : copy to clip board.
 
-3) Create a new folder and name it. Say, "app-services-code".
+3) Create a new folder and name it. Say, "microservices-code". If you have cloned inventory-services in some folder, clone this also in same folder.
 
-4) Enter into the "app-services-code" folder, open `Git Bash` and do a
+4) Enter into the "microservices-code" folder, open `Git Bash` and do a
 
 ```sh
-git clone git@git-cto.mindtree.com:opcoe/node-services-boilerplate.git
+git clone git@github.com:handaanmol/order-service.git
 ```
 
 5) You will get the services folder. Go to the working directory
 
 ```sh
-cd node-services-boilerplate
+cd order-services
 ```
 #### Run the App
 1) Install node dependencies
 ```sh
 npm install
 ```
-2) Run the app and you can see the app running in port 9001 by default
+2) Run the app and you can see the app running in port 9002 by default
 ```sh
-node index LOCAL
+node index 
 ```
 #### You can check the swagger url at
 
 LOCAL
-http://localhost:9001/microservices/apis/swagger
+http://localhost:9002/order-services/apis/swagger
 
