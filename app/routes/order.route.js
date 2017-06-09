@@ -13,10 +13,11 @@ var Promise = require("bluebird");
 
 //Creating the object to be exported.
 function init(router) {
-  router.route('/orders')
-    .post(placeOrder);
-   router.route('/orders/:id')
-     .get(getOrderById);
+    router.route('/orders')
+        .get(getOrders)
+        .post(placeOrder);
+    router.route('/orders/:id')
+        .get(getOrderById);
 };
 /**
  * This controller method accepts the item json and passes it to the service layer for saving it as a item document.
@@ -59,6 +60,23 @@ function getOrderById(req, res) {
         res.status(500).json(response);
     });
 }
+
+function getOrders(req, res) {
+    var response = new Response();
+    orderService.getOrders().then(function (result) {
+        response.data.order = result;
+        response.status.code = "200";
+        response.status.message = "All Orders fetched successfully.";
+        logger.info("All Orders fetched successfully.");
+        res.status(200).json(response);
+    }).catch(function (error) {
+        logger.error("error while fetching Orders {{In Controller}}", error);
+        response.status.code = "500";
+        response.status.message = "Orders were not fetched successfully";
+        res.status(500).json(response);
+    });
+}
+
 
 //Finally exporting the employee controller methods as an object.
 module.exports.init = init;

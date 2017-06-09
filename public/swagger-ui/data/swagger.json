@@ -16,6 +16,34 @@
     ],
     "paths": {
         "/order/apis/orders": {
+            "get": {
+                "summary": "get orders in inventory",
+                "description": "get orders in inventory\n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "tags": [
+                    "orders"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "get orders in inventory operation in response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            },
             "post": {
                 "summary": "placing an order in the inventory",
                 "description": "placing an order in the inventory\n",

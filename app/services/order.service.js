@@ -12,7 +12,8 @@ var orderFile = require('../../orders.json')
 //Creating the object which will finally be exported
 var orderService = {
     placeOrder: placeOrder,
-    getOrderById: getOrderById
+    getOrderById: getOrderById,
+    getOrders:getOrders
 };
 
 /**
@@ -57,5 +58,19 @@ function getOrderById(orderId) {
     })
 }
 
+
+function getOrders() {
+    return new Promise(function (resolve, reject) {
+        var orders=orderFile.orders;
+        if (orders!= undefined && orders != null) {
+            logger.info("orders fetched successfully")
+            resolve(orders);
+        }
+        else {
+            logger.error("Some error in fetching the items from inventory");
+            reject("Some error in fetching the items from inventory");
+        }
+    })
+}
 //Exporting allthe methods in an object
 module.exports = orderService;
