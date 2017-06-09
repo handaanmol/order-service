@@ -4,8 +4,7 @@
         "title": "order-services",
         "description": "Microservice for placing an order in the inventory(json)",
         "version": "1.0.0",
-        "termsOfService": "https://coe.mindtree.com/coe_advwebtech/",
-        "license": {}
+        "termsOfService": "https://coe.mindtree.com/coe_advwebtech/"
     },
     "host": "localhost:9002",
     "schemes": [
@@ -16,7 +15,7 @@
         "application/json"
     ],
     "paths": {
-        "/order-service/apis/orders": {
+        "/order/apis/orders": {
             "post": {
                 "summary": "placing an order in the inventory",
                 "description": "placing an order in the inventory\n",
@@ -55,7 +54,7 @@
                 }
             }
         },
-        "/order-service/apis/orders/{id}": {
+        "/order/apis/orders/{id}": {
             "get": {
                 "summary": "get order by id ",
                 "description": "get order by id \n",
@@ -66,10 +65,8 @@
                     "application/json"
                 ],
                 "parameters": [
-                    {
-                        "name": "id",
+                    {   "name": "id",
                         "in": "path",
-                        "description": "id of the order",
                         "type": "Integer"
                     }
                 ],
