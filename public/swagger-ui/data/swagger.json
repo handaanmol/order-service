@@ -148,7 +148,7 @@
         "placeOrder": {
             "type": "object",
             "properties": {
-                "itemId": {
+                "gtin": {
                     "type": "number"
                 },
                 "orderQuantity": {

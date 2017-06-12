@@ -25,7 +25,7 @@ function placeOrder(order) {
         var orderNo = new Date().getTime();
         var obj = {
             orderId: orderNo,
-            itemId: order.itemId,
+            gtin: order.gtin,
             orderQty: order.orderQuantity
         }
         orderFile.orders.push(obj);

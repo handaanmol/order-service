@@ -1,1 +1,19 @@
-{"orders":[{"orderId":1496772521967,"itemId":1,"orderQty":5},{"orderId":1496773182421,"itemId":2,"orderQty":6},{"orderId":1496816750899,"itemId":1,"orderQty":10}]}
+{
+    "orders": [
+        {
+            "orderId": 1496772521967,
+            "gtin": 47400656109,
+            "orderQty": 5
+        },
+        {
+            "orderId": 1496773182421,
+            "gtin": 47400656123,
+            "orderQty": 6
+        },
+        {
+            "orderId": 1496816750899,
+            "gtin": 47400656123,
+            "orderQty": 10
+        }
+    ]
+}
